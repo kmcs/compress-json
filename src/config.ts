@@ -4,4 +4,5 @@ export let config = {
   // default will convert into null silently like JSON.stringify
   error_on_nan: false,
   error_on_infinite: false,
+  error_on_undefined: false,
 }
