@@ -159,6 +159,9 @@ export function addValue(mem: Memory, o: any, parent: Parent | undefined): Key {
       if (Array.isArray(parent)) {
         return addValue(mem, null, parent)
       }
+      if (!config.error_on_undefined) {
+        return '' // treat it as null like JSON.stringify
+      }
       break
     case 'object':
       if (o === null) {
